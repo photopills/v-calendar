@@ -86,6 +86,10 @@ export default {
                 theme: this.$theme,
                 is24hr: this.is24hr,
                 minuteIncrement: this.minuteIncrement,
+                secondIncrement: this.secondIncrement,
+                millisecondIncrement: this.millisecondIncrement,
+                useSeconds: this.useSeconds,
+                useMilliseconds: this.useMilliseconds,
                 showBorder: !this.isTime,
                 isDisabled: (this.isDateTime && !dp.isValid) || this.isDragging,
                 'onUpdate:modelValue': p => this.onTimeInput(p, idx === 0),
@@ -168,6 +172,11 @@ export default {
     modelConfig: { type: Object, default: () => ({ ..._dateConfig }) },
     is24hr: Boolean,
     minuteIncrement: Number,
+    secondIncrement: Number,
+    millisecondIncrement: Number,
+    useSeconds: Boolean,
+    useMilliseconds: Boolean,
+
     isRequired: Boolean,
     isRange: Boolean,
     updateOnInput: {
